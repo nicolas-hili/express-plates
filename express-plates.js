@@ -13,7 +13,7 @@ function expressPlates(path, options, fn)
   }
   try {
     options.filename = path;
-    if (options.cache) {
+    if (options.cache && exports.cache) {
       str = exports.cache[key] || (exports.cache[key] = fs.readFileSync(path, 'utf8'));
     } else {
       str = fs.readFileSync(path, 'utf8');
